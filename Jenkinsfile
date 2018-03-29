@@ -6,5 +6,9 @@ pipeline {
         echo 'helloworld'
       }
     }
+     stage('check tools') {
+        sh "node -v"
+        sh "npm -v"
+    }
   }
 }
