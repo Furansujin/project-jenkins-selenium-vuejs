@@ -1,19 +1,12 @@
 pipeline {
 
   agent master
-   stages {
-
-    // Build
-    stage('Build') {
-      agent {
-        label 'master'
-      }
-      steps {
-        deleteDir()
+  node {
+    stage('Checkout') {
         checkout scm
-         sh "echo 'Run Static Code Analysis'"
-      }
+       sh "echo 'Run Static Code Analysis'"
     }
+  }
      
   stages {
     stage('helloworld') {
