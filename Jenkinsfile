@@ -12,7 +12,6 @@ pipeline {
         stage('build') {
           steps {
             echo 'Building...'
-            sh 'rm -rf node_modules/'
             sh 'npm install'
           }
         }
